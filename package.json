@@ -1,6 +1,6 @@
 {
   "name": "payphone-pay",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "description": "Paquete para integrar PayPhone Payments en NodeJS con TypeScript de forma sencilla.",
   "keywords": [

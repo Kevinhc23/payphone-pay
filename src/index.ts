@@ -14,6 +14,7 @@ async function createPaymentWithApp(
   const payPhone = new PayPhonePayment({
     ...payPhoneProps,
     clientTransactionId: transactionId.createUUID(),
+    storeId: process.env.STORE_ID_PAYPHONE,
   });
 
   const response = await payPhone

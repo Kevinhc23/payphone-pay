@@ -1,9 +1,10 @@
 # Paquete Para Crear Pagos Con PayPhone En Tu App.
 
-[![npm version](https://badge.fury.io/js/payphone-payments.svg)](https://www.npmjs.com/package/payphone-payments)
-[![npm](https://img.shields.io/npm/dt/payphone-payments.svg)](https://www.npmjs.com/package/payphone-payments)
-[![npm](https://img.shields.io/npm/dm/payphone-payments.svg)](https://www.npmjs.com/package/payphone-payments)
-[![npm](https://img.shields.io/npm/l/payphone-payments.svg)](https://www.npmjs.com/package/payphone-payments)
+[![npm version](https://badge.fury.io/js/payphone-payments.svg)](https://www.npmjs.com/package/payphone-pay)
+[![npm](https://img.shields.io/npm/dt/payphone-payments.svg)](https://www.npmjs.com/package/payphone-pay)
+[![npm](https://img.shields.io/npm/dm/payphone-payments.svg)](https://www.npmjs.com/package/payphone-pay)
+[![npm](https://img.shields.io/npm/l/payphone-payments.svg)](https://www.npmjs.com/package/payphone-pay)
+[![GitHub stars](https://img.shields.io/github/stars/Kevinhc23/payphone-payments.svg?style=social&label=Star)](https://github.com/Kevinhc23/payphone-pay.git)
 
 <div style="display: flex; justify-content: center; align-items: center; height: 80px; ">
   <img src="./src/assets/logopayphonenew.svg" alt="PayPhone" style="max-width: 200px; height: auto;">

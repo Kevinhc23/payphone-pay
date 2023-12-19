@@ -1,5 +1,5 @@
 import { createPaymentWithApp, createPaymentWithLink } from '../src/index';
-import { PayPhoneProps } from '../src/types/index';
+import { PayPhoneProps } from '../types/index.d';
 
 const mockPayPhoneProps: PayPhoneProps = {
   amount: 100, // Monto a pagar (sin impuestos) en centavos.

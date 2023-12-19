@@ -1,6 +1,6 @@
 import PayPhonePayment from './lib/create-pay';
 import { TransactionId } from './common/create-id';
-import { PayPhoneProps } from './types/index';
+import { PayPhoneProps } from '../types/index';
 
 /**
  * Función para crear un pago con PayPhone enviando un cobro a la app

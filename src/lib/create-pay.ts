@@ -1,4 +1,4 @@
-import { PayPhoneProps } from '../types/index';
+import { PayPhoneProps } from '../../types/index';
 import 'dotenv/config';
 
 /**

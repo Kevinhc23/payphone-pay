@@ -2,7 +2,7 @@
   "name": "payphone-pay",
   "version": "0.1.0",
   "license": "MIT",
-  "description": "Payphone Pay SDK for Node.js, TypeScript, and JavaScript",
+  "description": "Paquete para integrar PayPhone Payments en NodeJS con TypeScript de forma sencilla.",
   "keywords": [
     "payphone",
     "pay",
@@ -14,6 +14,14 @@
     "javascript"
   ],
   "author": "Kevin Hernandez <kevinhernandezcrespo97@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kevinhc23/payphone-pay.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kevinhc23/payphone-payments/issues"
+  },
+  "homepage": "https://github.com/Kevinhc23/payphone-pay#readme",
   "main": "dist/index.js",
   "module": "dist/payphone-pay.esm.js",
   "typings": "dist/index.d.ts",

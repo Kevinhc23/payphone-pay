@@ -1,103 +1,84 @@
-# DTS User Guide
+# Paquete Para Crear Pagos Con PayPhone En Tu App.
 
-Congrats! You just saved yourself hours of work by bootstrapping this project with DTS. Let’s get you oriented with what’s here and how to use it.
+[![npm version](https://badge.fury.io/js/payphone-payments.svg)](https://www.npmjs.com/package/payphone-payments)
+[![npm](https://img.shields.io/npm/dt/payphone-payments.svg)](https://www.npmjs.com/package/payphone-payments)
+[![npm](https://img.shields.io/npm/dm/payphone-payments.svg)](https://www.npmjs.com/package/payphone-payments)
+[![npm](https://img.shields.io/npm/l/payphone-payments.svg)](https://www.npmjs.com/package/payphone-payments)
 
-> This DTS setup is meant for developing libraries (not apps!) that can be published to NPM. If you’re looking to build a Node app, you could use `ts-node-dev`, plain `ts-node`, or simple `tsc`.
+<div style="display: flex; justify-content: center; align-items: center; height: 80px; ">
+  <img src="./src/assets/logopayphonenew.svg" alt="PayPhone" style="max-width: 200px; height: auto;">
+</div>
 
-> If you’re new to TypeScript, checkout [this handy cheatsheet](https://devhints.io/typescript)
+## Introducción
 
-## Commands
+PayPhone es una plataforma de pagos móviles que permite a los usuarios realizar pagos de manera segura y conveniente. PayPhone permite a los usuarios realizar pagos en línea y en tiendas físicas, así como transferir dinero entre usuarios. PayPhone también permite a los usuarios realizar pagos a comerciantes en línea y en tiendas físicas, así como transferir dinero entre usuarios.
 
-DTS scaffolds your new library inside `/src`.
+## Requisitos
 
-To run DTS, use:
+- Para poder utilizar la API de PayPhone, es necesario que cuentes con una cuenta de desarrollador en PayPhone. Si aún no tienes una, puedes crearla en [PayPhone Developer](https://appdeveloper.payphonetodoesposible.com/).
+
+- Token de acceso a la API de PayPhone. Para obtener el token de acceso, debes crear una aplicación en el portal de desarrolladores de PayPhone. Para más información, consulta la documentación de PayPhone en [PayPhone Developer](https://appdeveloper.payphonetodoesposible.com/).
+
+- Store ID. Para obtener el Store ID, debes crear una aplicación en el portal de desarrolladores de PayPhone. Para más información, consulta la documentación de PayPhone en [PayPhone Developer](https://appdeveloper.payphonetodoesposible.com/).
+
+- Crear un archivo .env en la raíz del proyecto con las siguientes variables de entorno:
+
+  - TOKEN_PAYPHONE
+  - STORE_ID_PAYPHONE
+
+## Instalación
+
+Para instalar el paquete, ejecuta el siguiente comando:
 
 ```bash
-npm start # or yarn start
+npm install payphone-pay
 ```
 
-This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
+## Uso
 
-To do a one-off build, use `npm run build` or `yarn build`.
+Para utilizar el paquete, debes importar la clase PayPhonePayments y crear una instancia de la clase. Para crear la instancia, debes pasar como parámetros:
 
-To run tests, use `npm test` or `yarn test`.
+```typescript
+import { createPaymentWithLink, createPaymentWithApp } from 'payphone-payments';
 
-## Configuration
+const Props: PayPhoneProps = {
+  amount: 100, // Monto a pagar (sin impuestos) en centavos.
+  currency: 'USD', // Moneda en la que se realizará el pago.
+  email: 'kevinhernandezcrespo97@gmail.com', // Correo electrónico del cliente.
+  phoneNumber: '0959192123', // Número de teléfono del cliente.
+  amountWithoutTax: 100, // Monto a pagar (sin impuestos) en centavos.
+  tax: 0, // Impuestos en centavos.
+  documentId: '0958751234', // Número de identificación del cliente.
+  countryCode: '593', // Código de país del cliente.
+};
 
-Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
+// Para crear un pago con link, debes llamar a la función createPaymentWithLink y pasar como parámetro el objeto Props.
+const createPaymentWithLink = createPaymentWithLink(Props);
 
-### Jest
-
-Jest tests are set up to run with `npm test` or `yarn test`.
-
-### Bundle Analysis
-
-[`size-limit`](https://github.com/ai/size-limit) is set up to calculate the real cost of your library with `npm run size` and visualize the bundle with `npm run analyze`.
-
-#### Setup Files
-
-This is the folder structure we set up for you:
-
-```txt
-/src
-  index.ts        # EDIT THIS
-/test
-  index.test.ts   # EDIT THIS
-.gitignore
-package.json
-README.md         # EDIT THIS
-tsconfig.json
+// Para crear un pago con la aplicación de PayPhone, debes llamar a la función createPaymentWithApp y pasar como parámetro el objeto Props.
+const createPaymentWithApp = createPaymentWithApp(Props);
 ```
 
-### Rollup
+## Documentación
 
-DTS uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings. See [Optimizations](#optimizations) for details.
+Para más información, consulta la documentación de PayPhone en [PayPhone Developer](https://appdeveloper.payphonetodoesposible.com/).
 
-### TypeScript
+## Licencia
 
-`tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
+[MIT](https://choosealicense.com/licenses/mit/)
 
-## Continuous Integration
+## Autor
 
-### GitHub Actions
+[Kevin Hernández Crespo](https://github.com/Kevinhc23)
 
-Two actions are added by default:
+## Contribuir
 
-- `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
-- `size` which comments cost comparison of your library on every pull request using [`size-limit`](https://github.com/ai/size-limit)
+Si deseas contribuir con el proyecto, puedes hacerlo en [GitHub](https://github.com/Kevinhc23/payphone-payments).
 
-## Optimizations
+## Soporte
 
-Please see the main `dts` [optimizations docs](https://github.com/weiran-zsd/dts-cli#optimizations). In particular, know that you can take advantage of development-only optimizations:
+Si tienes algún problema con el paquete, puedes crear un [Issue](https://github.com/Kevinhc23/payphone-payments/issues).
 
-```js
-// ./types/index.d.ts
-declare var __DEV__: boolean;
+## Donaciones
 
-// inside your code...
-if (__DEV__) {
-  console.log('foo');
-}
-```
-
-You can also choose to install and use [invariant](https://github.com/weiran-zsd/dts-cli#invariant) and [warning](https://github.com/weiran-zsd/dts-cli#warning) functions.
-
-## Module Formats
-
-CJS, ESModules, and UMD module formats are supported.
-
-The appropriate paths are configured in `package.json` and `dist/index.js` accordingly. Please report if any issues are found.
-
-## Named Exports
-
-Per Palmer Group guidelines, [always use named exports.](https://github.com/palmerhq/typescript#exports) Code split inside your React app instead of your React library.
-
-## Including Styles
-
-There are many ways to ship styles, including with CSS-in-JS. DTS has no opinion on this, configure how you like.
-
-For vanilla CSS, you can include it at the root directory and add it to the `files` section in your `package.json`, so that it can be imported separately by your users and run through their bundler's loader.
-
-## Publishing to NPM
-
-We recommend using [np](https://github.com/sindresorhus/np).
+Si deseas apoyarme, puedes hacerlo en [PayPal](https://paypal.me/Kevinhc23?country.x=EC&locale.x=es_XC).

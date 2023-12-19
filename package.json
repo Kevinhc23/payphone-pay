@@ -2,7 +2,18 @@
   "name": "payphone-pay",
   "version": "0.1.0",
   "license": "MIT",
-  "author": "Kevin",
+  "description": "Payphone Pay SDK for Node.js, TypeScript, and JavaScript",
+  "keywords": [
+    "payphone",
+    "pay",
+    "phone",
+    "sdk",
+    "api",
+    "node",
+    "typescript",
+    "javascript"
+  ],
+  "author": "Kevin Hernandez <kevinhernandezcrespo97@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/payphone-pay.esm.js",
   "typings": "dist/index.d.ts",
@@ -33,7 +44,6 @@
   "jest": {
     "testEnvironment": "node"
   },
-  "peerDependencies": {},
   "engines": {
     "node": ">=12"
   },
@@ -46,5 +56,18 @@
       "path": "dist/payphone-pay.esm.js",
       "limit": "10 KB"
     }
-  ]
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^11.0.1",
+    "@tsconfig/recommended": "^1.0.3",
+    "@types/uuid": "^9.0.7",
+    "dts-cli": "^2.0.3",
+    "husky": "^8.0.3",
+    "size-limit": "^11.0.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
 }
